@@ -15,7 +15,6 @@ return {
 			ensure_installed = {
 				"prettier", -- ts/js formatter
 				"eslint_d", -- ts/js linter
-				"shfmt", -- Shell formatter
 				"stylua", -- lua formatter; Already installed via Mason
 				"csharpier",
 			},
@@ -25,8 +24,6 @@ return {
 		local sources = {
 			formatting.prettier.with({ filetypes = { "html", "json", "yaml", "markdown" } }),
 			formatting.stylua,
-			formatting.shfmt.with({ args = { "-i", "4" } }),
-			formatting.terraform_fmt,
 			formatting.csharpier,
 		}
 

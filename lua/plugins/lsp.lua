@@ -135,13 +135,9 @@ return {
 			ts_ls = {},
 			html = { filetypes = { "html", "twig", "hbs" } },
 			cssls = {},
-			tailwindcss = {},
 			dockerls = {},
 			sqlls = {},
-			terraformls = {},
-			jsonls = {},
 			yamlls = {},
-			roslyn = {},
 			lua_ls = {
 				settings = {
 					Lua = {
