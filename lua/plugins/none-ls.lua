@@ -3,20 +3,19 @@ return {
 	commit = "91a59a95771da1cffb35f082c317e381a5fe85a5",
 	dependencies = {
 		{ "nvimtools/none-ls-extras.nvim", commit = "402c6b5c29f0ab57fac924b863709f37f55dc298" },
-		{ "jayp0521/mason-null-ls.nvim", commit = "de19726de7260c68d94691afb057fa73d3cc53e7" }, -- ensure dependencies are installed
+		{ "jayp0521/mason-null-ls.nvim", commit = "de19726de7260c68d94691afb057fa73d3cc53e7" },
 	},
 	config = function()
 		local null_ls = require("null-ls")
-		local formatting = null_ls.builtins.formatting -- to setup formatters
-		local diagnostics = null_ls.builtins.diagnostics -- to setup linters
+		local formatting = null_ls.builtins.formatting
+		local diagnostics = null_ls.builtins.diagnostics
 
 		-- Formatters & linters for mason to install
 		require("mason-null-ls").setup({
 			ensure_installed = {
-				"prettier", -- ts/js formatter
-				"eslint_d", -- ts/js linter
-				"stylua", -- lua formatter; Already installed via Mason
-				"csharpier",
+				"prettier",
+				"eslint_d",
+				"stylua",
 			},
 			automatic_installation = true,
 		})
@@ -24,7 +23,6 @@ return {
 		local sources = {
 			formatting.prettier.with({ filetypes = { "html", "json", "yaml", "markdown" } }),
 			formatting.stylua,
-			formatting.csharpier,
 		}
 
 		local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
