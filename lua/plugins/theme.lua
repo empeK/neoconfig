@@ -17,6 +17,7 @@ return {
 		commit = "38caa8b5b969010b1dcae8ab1a569d7669a643d5",
 		config = function()
 			require("ayu").colorscheme("ayu-dark")
+			vim.api.nvim_set_hl(0, "LineNr", { fg = "white" })
 		end,
 	},
 }
