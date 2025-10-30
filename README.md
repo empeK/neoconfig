@@ -15,10 +15,3 @@ For csharpier to work with formatting:
 
 1. Install csharpier `dotnet tool install -g csharpier`
 2. If after install `csharpier` command is not working, insert `%USERPROFILE%\.dotnet\tools` to environment variables -> PATH
-
-# TODO
-
-## Formatting
-
-Currenly there are two plugins installed that are responsible for formatting: `conform` and `none-ls`.
-Set all formatting to be only in `conform`
