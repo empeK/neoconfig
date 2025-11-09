@@ -69,6 +69,9 @@ vim.keymap.set("n", "]d", function()
 	vim.diagnostic.jump({ count = 1, float = true })
 end, { desc = "Go to next diagnostic message" })
 
+vim.keymap.set("n", "]c", "<cmd>cnext<CR>", { desc = "Quick fix open previous" })
+vim.keymap.set("n", "[c", "<cmd>cprev<CR>", { desc = "Quick fix open next" })
+
 vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
 
