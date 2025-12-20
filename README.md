@@ -15,3 +15,11 @@ For csharpier to work with formatting:
 
 1. Install csharpier `dotnet tool install -g csharpier`
 2. If after install `csharpier` command is not working, insert `%USERPROFILE%\.dotnet\tools` to environment variables -> PATH
+
+## Angular
+
+Angular language service is taken from global node modules.
+So for it to work we need:
+
+1. Install `@angular/language-service` globally `npm i -g @angular/language-service`
+2. Install `typescript` globally `npm i -g typescript`
