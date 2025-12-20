@@ -21,5 +21,6 @@ For csharpier to work with formatting:
 Angular language service is taken from global node modules.
 So for it to work we need:
 
-1. Install `@angular/language-service` globally `npm i -g @angular/language-service`
-2. Install `typescript` globally `npm i -g typescript`
+1. Install `@angular/language-server` globally `npm i -g @angular/language-server`
+2. Install `@angular/language-service` globally `npm i -g @angular/language-service`
+3. Install `typescript` globally `npm i -g typescript`
