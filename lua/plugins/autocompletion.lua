@@ -93,7 +93,7 @@ return { -- Autocompletion
 				["<CR>"] = cmp.mapping.confirm({ select = true }),
 
 				-- Manually trigger a completion from nvim-cmp.
-				["<C-Space>"] = cmp.mapping.complete({}),
+				["<C-y>"] = cmp.mapping.complete({}),
 
 				-- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
 				--    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps

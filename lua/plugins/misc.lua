@@ -23,6 +23,7 @@ return {
 		opts = {},
 	},
 	{
+		-- Split/Join parameters
 		"Wansmer/treesj",
 		keys = { "<space>m", "<space>j", "<space>s" },
 		dependencies = { "nvim-treesitter/nvim-treesitter" },
