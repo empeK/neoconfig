@@ -1,6 +1,5 @@
 {
   "LuaSnip": { "branch": "master", "commit": "73813308abc2eaeff2bc0d3f2f79270c491be9d7" },
-  "alpha-nvim": { "branch": "main", "commit": "2b3cbcdd980cae1e022409289245053f62fb50f6" },
   "cmp-buffer": { "branch": "main", "commit": "b74fab3656eea9de20a9b8116afa3cfc4ec09657" },
   "cmp-nvim-lsp": { "branch": "main", "commit": "bd5a7d6db125d4654b50eeae9f5217f24bb22fd3" },
   "cmp-path": { "branch": "main", "commit": "c642487086dbd9a93160e1679a1327be111cbc25" },
@@ -39,6 +38,7 @@
   "tabout.nvim": { "branch": "master", "commit": "9a3499480a8e53dcaa665e2836f287e3b7764009" },
   "telescope-ui-select.nvim": { "branch": "master", "commit": "6e51d7da30bd139a6950adf2a47fda6df9fa06d2" },
   "telescope.nvim": { "branch": "master", "commit": "b4da76be54691e854d3e0e02c36b0245f945c2c7" },
+  "tree-sitter-angular": { "branch": "main", "commit": "3bd2036e710f609ea08fcfca5a1eb1169ecc114f" },
   "treesj": { "branch": "main", "commit": "4770492244ccecdc9b01e0e81fa8f2f6b4a23841" },
   "undotree": { "branch": "main", "commit": "1c3e7531fad0a9c27942c5438be5adbd26260470" },
   "vim-fugitive": { "branch": "master", "commit": "61b51c09b7c9ce04e821f6cf76ea4f6f903e3cf4" },

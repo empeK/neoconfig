@@ -80,3 +80,23 @@ vim.keymap.set("n", "<leader>cp", function()
 	vim.fn.setreg("+", vim.fn.expand("%:p"))
 	print("Copied full path to clipboard!")
 end, { desc = "Copy full file path" })
+
+-- Angular specific
+local function open_component(ext)
+	local root = vim.fn.expand("%:r"):gsub(".spec", "")
+	local target = root .. ext
+	vim.cmd("edit " .. target)
+end
+
+vim.keymap.set("n", "<leader>1", function()
+	open_component(".ts")
+end, { desc = "Go to component.ts" })
+vim.keymap.set("n", "<leader>2", function()
+	open_component(".html")
+end, { desc = "Go to component.html" })
+vim.keymap.set("n", "<leader>3", function()
+	open_component(".scss")
+end, { desc = "Go to component.scss" })
+vim.keymap.set("n", "<leader>4", function()
+	open_component(".spec.ts")
+end, { desc = "Go to component.spec.ts" })

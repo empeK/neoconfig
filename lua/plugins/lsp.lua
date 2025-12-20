@@ -124,6 +124,27 @@ return {
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
 		capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
+		local angular_cmd = nil
+		local handle = io.popen("npm config get prefix")
+		if handle then
+			local prefix = handle and handle:read("*a"):gsub("%s+$", "")
+			handle:close()
+
+			local global_node_modules = prefix .. "/node_modules"
+			print(global_node_modules)
+
+			angular_cmd = {
+				"ngserver",
+				"--stdio",
+				"--tsProbeLocations",
+				global_node_modules,
+				"--ngProbeLocations",
+				global_node_modules,
+			}
+		else
+			print("[WARN] Handle for node modules was not found")
+		end
+
 		-- Enable the following language servers
 		--
 		-- Add any additional override configuration in the following tables. Available keys are:
@@ -132,9 +153,10 @@ return {
 		-- - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
 		-- - settings (table): Override the default settings passed when initializing the server.
 		local servers = {
+			angularls = { cmd = angular_cmd, filetypes = { "ts", "typescript", "html", "htmlangular" } },
 			ts_ls = {},
 			html = { filetypes = { "html", "twig", "hbs" } },
-			cssls = {},
+			cssls = { filetypes = { "css", "scss" } },
 			dockerls = {},
 			sqlls = {},
 			yamlls = {},

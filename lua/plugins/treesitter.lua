@@ -35,8 +35,13 @@ return {
 	},
 	{
 		"nvim-treesitter/nvim-treesitter-textobjects",
-		dependencies = { "nvim-treesitter" },
+		dependencies = { "nvim-treesitter", "dlvandenberg/tree-sitter-angular" },
 		config = function()
+			vim.filetype.add({
+				pattern = {
+					[".*%.html"] = "htmlangular", -- Sets the filetype to `htmlangular` if it matches the pattern
+				},
+			})
 			require("nvim-treesitter.configs").setup({
 				textobjects = {
 					move = {
