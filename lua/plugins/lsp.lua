@@ -131,7 +131,6 @@ return {
 			handle:close()
 
 			local global_node_modules = prefix .. "/node_modules"
-			print(global_node_modules)
 
 			angular_cmd = {
 				"ngserver",
