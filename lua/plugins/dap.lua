@@ -67,6 +67,10 @@ return {
 					return require("dap-dll-autopicker").build_dll_path()
 				end,
 				console = "internalConsole",
+				env = {
+					ASPNETCORE_ENVIRONMENT = "Development",
+					DOTNET_ENVIRONMENT = "Development",
+				},
 			},
 		}
 
