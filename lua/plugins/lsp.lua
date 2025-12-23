@@ -124,25 +124,20 @@ return {
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
 		capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
-		local angular_cmd = nil
-		local handle = io.popen("npm config get prefix")
-		if handle then
-			local prefix = handle and handle:read("*a"):gsub("%s+$", "")
-			handle:close()
+		local prefix = vim.fn.system("npm config get prefix"):gsub("%s+$", "")
+		local global_node_modules = prefix .. "/node_modules"
 
-			local global_node_modules = prefix .. "/node_modules"
-
-			angular_cmd = {
-				"ngserver",
-				"--stdio",
-				"--tsProbeLocations",
-				global_node_modules,
-				"--ngProbeLocations",
-				global_node_modules,
-			}
-		else
-			print("[WARN] Handle for node modules was not found")
-		end
+		local angular_cmd = {
+			"ngserver",
+			"--stdio",
+			"--tsProbeLocations",
+			global_node_modules,
+			"--ngProbeLocations",
+			global_node_modules,
+		}
+		-- else
+		-- 	print("[WARN] Handle for node modules was not found")
+		-- end
 
 		-- Enable the following language servers
 		--
